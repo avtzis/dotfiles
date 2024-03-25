@@ -6,10 +6,10 @@
 }
 
 window#waybar {
-  /* background-color: rgba(43, 48, 59, 0.5); */
-  background-color: #282A36;
+  background-color: rgba(30, 30, 46, 0.99);
+  /* background-color: #1e1e2e; */
   /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-  color: #ffffff;
+  color: #cdd6f4;
   transition-property: background-color;
   transition-duration: .5s;
   border-radius: 25px;
@@ -100,7 +100,7 @@ button:hover {
 #scratchpad,
 #mpd {
   padding: 0 10px;
-  color: #F8F8F2;
+  color: #cdd6f4;
 }
 
 #window {
@@ -156,9 +156,11 @@ label:focus {
 }
 
 #cpu {
+  color: #cdd6f4;
 }
 
 #memory {
+  color: #cdd6f4;
 }
 
 #disk {
@@ -170,6 +172,7 @@ label:focus {
 }
 
 #network {
+  color: #cdd6f4;
   margin-right: 20px;
 }
 
@@ -215,8 +218,14 @@ label:focus {
 }
 
 #tray {
+  color: #cdd6f4;
   /* font-size: 20px; */
   margin-right: 6px;
+}
+
+#tray menu {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
 }
 
 #tray > .passive {
@@ -255,7 +264,7 @@ label:focus {
 }
 
 #language {
-  color: #F8F8F2;
+  color: #cdd6f4;
   /* padding: 0 5px;
 margin: 0 5px;
 min-width: 16px; */
@@ -287,14 +296,14 @@ min-width: 16px; */
 }
 
 #custom-os-icon {
-  color: #F8F8F2;
+  color: #cdd6f4;
   font-size: 26px;
   /* margin-left: 8px; */
   margin-right: 14px;
 }
 
 #custom-power {
-  color: #F8F8F2;
+  color: #cdd6f4;
   font-size: 20px;
   margin-left: 12px;
   /* margin-right: 10px; */
