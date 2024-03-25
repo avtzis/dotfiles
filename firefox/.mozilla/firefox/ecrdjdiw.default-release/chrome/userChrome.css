@@ -102,7 +102,9 @@ tab:not(:active) .tab-background {
   > .tab-stack
   > .tab-background[selected='true'] {
   background-image: none !important;
-  background-color: var(--toolbar-bgcolor) !important;
+  /* background-color: var(--toolbar-bgcolor) !important; */
+  background-color: var(--window) !important;
+  /* background-color: #B4BEFE !important; */
 }
 
 /* Inactive tabs color */
@@ -161,7 +163,7 @@ tab:not(:active) .tab-background {
   padding-left: 0 !important;
 }
 
-#tabs-newtab-button:hover 
+#tabs-newtab-button:hover
   > .toolbarbutton-icon { border-radius: 20px !important; }
 
 #TabsToolbar {
@@ -171,14 +173,14 @@ tab:not(:active) .tab-background {
 
 #TabsToolbar #firefox-view-button[open]
   > .toolbarbutton-icon, .tab-background:is([selected], [multiselected]) {
-  border: 2px solid #FF79C6;
+  border: 2px solid #b4befe;
 }
 
 /* remove tab shadow */
 .tabbrowser-tab
   >.tab-stack
-  > .tab-background { 
-  box-shadow: none !important;  
+  > .tab-background {
+  box-shadow: none !important;
 }
 
 /* multi tab selection */
@@ -204,7 +206,7 @@ tab:not(:active) .tab-background {
 #appMenu-fxa-separator{border-image:none !important;}
 
 #urlbar-background {
-  color: #BD93F9 !important;
+  color: #b4befe !important;
   border: 2px solid !important;
   border-radius: 20px !important;
 }
