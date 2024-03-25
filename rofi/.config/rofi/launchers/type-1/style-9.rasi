@@ -2,7 +2,7 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
+ *
  * Rofi Theme File
  * Rofi Version: 1.7.3
  **/
@@ -65,9 +65,9 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      4px solid;
+    border:                      3px solid;
     border-radius:               10px;
-    border-color:                #BD93F9;
+    border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */
     background-color:            @background-colour;
@@ -176,7 +176,7 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
+
     spacing:                     5px;
     margin:                      0px;
     padding:                     10px;
