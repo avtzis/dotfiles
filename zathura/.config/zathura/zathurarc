@@ -4,3 +4,5 @@ map <C-d> set "first-page-column 1:2"
 
 map Left navigate previous
 map Right navigate next
+
+include catppuccin-mocha
