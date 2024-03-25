@@ -65,8 +65,9 @@ plugins=(
 	history
 
 	#custom
-	zsh-syntax-highlighting
+	# zsh-syntax-highlighting
 	zsh-autosuggestions
+	fast-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
