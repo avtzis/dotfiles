@@ -72,6 +72,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # User configuration
 
 # FPATH
@@ -92,7 +95,7 @@ export BACKTICK='`'
 bindkey '^H' backward-kill-word
 
 # Colored Manpages
-source $ZSH/manpages.sh
+# source $ZSH/manpages.sh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -108,7 +111,7 @@ alias pacin="sudo pacman -S"
 alias pacout="sudo pacman -R"
 alias paclean="sudo pacman -Sc"
 alias pacorph="sudo pacman -Qtdq | sudo pacman -Rns -"
-alias sui="sudo pacman -Syu && yay -Syu && paclean"
+alias sui="arch-update -d"
 alias yayin="yay -S"
 alias payin='yayin'
 alias yayout='yay -R'
@@ -128,23 +131,9 @@ alias nv='nvim'
 alias ntua='sudo openvpn ~/.openvpn/ntua.ovpn'
 alias nf='neofetch'
 alias clear="printf '\033[2J\033[3J\033[1;1H'"
+alias clang-15="/usr/lib/llvm15/bin/clang-15"
+alias llc-15="/usr/lib/llvm15/bin/llc"
+alias gracec="~/projects/ntua-gracec/gracec"
 
 # Startup
 pokemon
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Created by `pipx` on 2023-10-16 15:02:45
-export PATH="$PATH:/home/avtzis/.local/bin"
-
-# Append PATH Utility Function
-# Append "$1" to $PATH when not already in.
-append_path () {
-  case ":$PATH:" in
-    *:"$1":*)
-      ;;
-    *)
-      PATH="${PATH:+$PATH:}$1"
-  esac
-}

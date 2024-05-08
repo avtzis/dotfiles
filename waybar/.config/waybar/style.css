@@ -1,6 +1,6 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: 'Fira Code', 'fontAwesome';
+  font-family: 'Fira Code', 'fontAwesome', 'FiraCode Nerd Font';
   font-size: 15px;
   font-weight: bold;
 }
@@ -309,10 +309,11 @@ min-width: 16px; */
   /* margin-right: 10px; */
 }
 
-#custom-power:hover {
-  background: #FF79C6;
-  color: #FF79C6;
-}
+/* #custom-power:hover {
+  border-radius: 15px;
+  background: #f38ba8;
+  color: #181825;
+} */
 
 #custom-screenshot {
   margin-right: 10px;

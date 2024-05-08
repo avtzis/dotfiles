@@ -9,7 +9,14 @@
 
 /*****----- Configuration -----*****/
 configuration {
-    show-icons:                 false;
+	modi:                       "drun,run,filebrowser,window";
+    show-icons:                 true;
+    display-drun:               "APPS";
+    display-run:                "RUN";
+    display-filebrowser:        "FILES";
+    display-window:             "WINDOW";
+	drun-display-format:        "{name}";
+	window-format:              "{w} · {c} · {t}";
 }
 
 /*****----- Global Properties -----*****/
@@ -84,7 +91,7 @@ inputbar {
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         " ";
+    str:                         " ";
     background-color:            inherit;
     text-color:                  inherit;
 }
@@ -93,7 +100,7 @@ entry {
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Filter";
+    placeholder:                 "Search";
     placeholder-color:           inherit;
 }
 

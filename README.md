@@ -1,6 +1,6 @@
 These are my dots :)
 
 ## install
-'''sh
+```sh
 stow -vt ~ */
-'''
+```

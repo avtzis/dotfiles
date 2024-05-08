@@ -7,7 +7,7 @@ theme="$type/$style"
 # Theme Elements
 prompt='Clipboard History'
 mesg="idk"
-win_width='720px'
+win_width='960px'
 
 cliphist list | \
   rofi -theme-str "window {width: $win_width;}" \

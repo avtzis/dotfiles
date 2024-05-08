@@ -20,13 +20,13 @@
       "format": "{}",
       "return-type": "json",
       "tooltip": true,
-      "on-click": "~/.config/rofi/launchers/type-1/launcher.sh",
+      "on-click": "~/.config/rofi/launchers/type-6/launcher.sh",
       "exec": "~/.config/waybar/scripts/arch.sh",
     },
     "custom/power": {
       "format": " ",
       "tooltip": false,
-      "on-click": "~/.config/rofi/powermenu/type-3/powermenu.sh"
+      "on-click": "~/.config/rofi/powermenu/type-4/powermenu.sh"
     },
     "custom/screenshot": {
       "format": "  ",
@@ -45,7 +45,7 @@
       "format-icons": {
         "locked": "",
         "unlocked": ""
-      }
+      },
     },
     "hyprland/window": {
       "format": "{}",
@@ -115,7 +115,7 @@
       "interval": 1
     },
     "memory": {
-      "format": "  {}%",
+      "format": "  {}%",
       "interval": 1
     },
     "temperature": {
