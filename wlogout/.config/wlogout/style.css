@@ -1,0 +1,86 @@
+* {
+	background-image: none;
+	box-shadow: none;
+}
+
+window {
+	background-color: rgba(30, 30, 46, 0.6);
+	font-size: 16pt;
+}
+
+button {
+	border: solid 1px;
+	border-radius: 20px;
+	/* border-color: transparent; */
+	border-color: rgba(147, 153, 178, 0.3);
+
+	margin: 20px 0px;
+
+	color: #cdd6f4;
+	text-decoration-color: #cdd6f4;
+
+	background-color: rgba(147, 153, 178, 0.1);
+	/* background-color: transparent; */
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40%;
+
+	animation: gradient_f 20s ease-in infinite;
+}
+
+button:hover {
+	margin: 0px 0px;
+	padding: 0px 60px;
+	background-size: 50%;
+
+	background-color: #b4befe;
+	color: #b4befe;
+	/* color: #1e1e2e; */
+
+	animation: gradient_f 20s ease-in infinite;
+	transition: all 0.3s, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+	box-shadow: 0 0 20px #b4befe;
+}
+
+#lock {
+	background-image: image(url("icons/lock-light.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+#lock:hover {
+	background-image: image(url("icons/lock-dark.png"));
+}
+
+#logout {
+	background-image: image(url("icons/logout-light.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+#logout:hover {
+	background-image: image(url("icons/logout-dark.png"));
+}
+
+#suspend {
+	background-image: image(url("icons/suspend-light.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+#suspend:hover {
+	background-image: image(url("icons/suspend-dark.png"));
+}
+
+#hibernate {
+	background-image: image(url("icons/hibernate-light.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+}
+#hibernate:hover {
+	background-image: image(url("icons/hibernate-dark.png"));
+}
+
+#shutdown {
+	background-image: image(url("icons/power-light.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+#shutdown:hover {
+	background-image: image(url("icons/power-dark.png"));
+}
+
+#reboot {
+	background-image: image(url("icons/restart-light.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}
+#reboot:hover {
+	background-image: image(url("icons/restart-dark.png"));
+}
