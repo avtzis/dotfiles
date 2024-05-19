@@ -41,9 +41,9 @@ window#waybar.chromium {
   margin-left: 10px;
 }
 
-.modules-right {
+/* .modules-right {
   margin-right: 10px;
-}
+} */
 
 button {
   /* Use box-shadow instead of border so the text isn't offset */
@@ -305,15 +305,15 @@ min-width: 16px; */
 #custom-power {
   color: #cdd6f4;
   font-size: 20px;
-  margin-left: 12px;
-  /* margin-right: 10px; */
+  padding-left: 16px;
+  padding-right: 22px;
 }
 
-/* #custom-power:hover {
+#custom-power:hover {
   border-radius: 15px;
   background: #f38ba8;
   color: #181825;
-} */
+}
 
 #custom-screenshot {
   margin-right: 10px;

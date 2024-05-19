@@ -24,9 +24,9 @@
       "exec": "~/.config/waybar/scripts/arch.sh",
     },
     "custom/power": {
-      "format": " ",
+      "format": "",
       "tooltip": false,
-      "on-click": "~/.config/rofi/powermenu/type-4/powermenu.sh"
+      "on-click": "wlogout -b 5 -T 400 -B 400 -c 20"
     },
     "custom/screenshot": {
       "format": "  ",
