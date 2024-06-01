@@ -37,9 +37,9 @@ window#waybar.chromium {
   border: none;
 }
 
-.modules-left {
+/* .modules-left {
   margin-left: 10px;
-}
+} */
 
 /* .modules-right {
   margin-right: 10px;
@@ -298,8 +298,14 @@ min-width: 16px; */
 #custom-os-icon {
   color: #cdd6f4;
   font-size: 26px;
-  /* margin-left: 8px; */
-  margin-right: 14px;
+  padding-left: 13px;
+  padding-right: 17px;
+}
+
+#custom-os-icon:hover {
+  border-radius: 15px;
+  background: #89b4fa;
+  color: #181825;
 }
 
 #custom-power {
