@@ -32,10 +32,11 @@ button:hover {
 	margin: 0px 0px;
 	padding: 0px 60px;
 	background-size: 50%;
+	font-size: 0;
 
 	background-color: #b4befe;
-	color: #b4befe;
 	/* color: #1e1e2e; */
+	/* color: transparent; */
 
 	animation: gradient_f 20s ease-in infinite;
 	transition: all 0.3s, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;

@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "loginctl lock-session",
+    "action" : "hyprctl switchxkblayout wfdz-gaming-keyboard 0 && loginctl lock-session",
     "text" : "Lock",
     "keybind" : "l"
 }
