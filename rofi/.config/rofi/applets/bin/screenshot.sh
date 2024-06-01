@@ -88,13 +88,13 @@ notify_view() {
 countdown () {
 	for sec in `seq $1 -1 1`; do
 		dunstify -t 1000 --replace=699 "Taking shot in : $sec"
-		sleep 1
+		sleep 1.1
 	done
 }
 
 # take shots
 shotnow () {
-  sleep 0.1 && grimblast copysave output $dir/$file
+  sleep 0.2 && grimblast copysave output $dir/$file
   notify_view
 }
 
@@ -111,7 +111,7 @@ shot10 () {
 }
 
 shotwin () {
-	sleep 0.1 && grimblast copysave active $dir/$file
+	sleep 0.2 && grimblast copysave active $dir/$file
 }
 
 shotarea () {
