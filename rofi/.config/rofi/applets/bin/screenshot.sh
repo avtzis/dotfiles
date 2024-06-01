@@ -88,7 +88,7 @@ notify_view() {
 countdown () {
 	for sec in `seq $1 -1 1`; do
 		dunstify -t 1000 --replace=699 "Taking shot in : $sec"
-		sleep 1.1
+		sleep 0.99
 	done
 }
 
@@ -100,12 +100,14 @@ shotnow () {
 
 shot5 () {
 	countdown '5'
+	sleep 0.15
 	grimblast copysave output $dir/$file
 	notify_view
 }
 
 shot10 () {
 	countdown '10'
+	sleep 0.15
 	grimblast copysave output $dir/$file
 	notify_view
 }
