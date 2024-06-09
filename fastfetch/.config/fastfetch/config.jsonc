@@ -1,0 +1,138 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/logos/arch-sprite",
+    "color": {
+      "1": "blue"
+    }
+  },
+  "display": {
+    "separator": " -> ",
+    "color": {
+      "keys": "blue",
+      "separator": "cyan",
+      "title": "blue",
+      "output": "white"
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "color": {
+        "user": "white",
+        "at": "cyan",
+        "host": "white"
+      },
+      "key": "          "
+    },
+    {
+      "type": "custom",
+      "format": "├─────────── Hardware Information ───────────┤",
+      "outputColor": "cyan"
+    },
+    {
+      "type": "cpu",
+      "key": "   ",
+      "format": "{1} ({3}C|{4}T) @ {7}GHz"
+    },
+    {
+      "type": "host",
+      "key": "   ",
+      "format": "MSI B450 Gaming Plus Max {2}"
+    },
+    {
+      "type": "memory",
+      "key": "  󰟖 ",
+      "format": "G.Skill Ripjaws V {2} DDR4"
+    },
+    {
+      "type": "gpu",
+      "key": "  󰘚 ",
+      "format": "{2} 56 8GB"
+    },
+    {
+      "type": "physicaldisk",
+      "key": "   ",
+      "namePrefix": "ATA Samsung",
+      "format": "{2} {1}"
+    },
+    {
+      "type": "display",
+      "key": "   ",
+      "compactType": "original-with-refresh-rate"
+    },
+    {
+      "type": "custom",
+      "format": "├─────────── Software Information ───────────┤"
+    },
+    {
+      "type": "os",
+      "key": "   ",
+      "format": "{3}"
+    },
+    {
+      "type": "kernel",
+      "key": "   "
+    },
+    {
+      "type": "shell",
+      "key": "   ",
+      "format": "{3}"
+    },
+    {
+      "type": "packages",
+      "key": "   "
+    },
+    {
+      "type": "uptime",
+      "key": "   "
+    },
+    {
+      "type": "custom",
+      "format": "├───────────── Rice Information ─────────────┤"
+    },
+    {
+      "type": "wm",
+      "key": "   ",
+      "format": " {1} ({3})"
+    },
+    {
+      "type": "theme",
+      "key": "  󰉼 ",
+      "format": "Catppuccin Mocha (Lavender)"
+    },
+    {
+      "type": "icons",
+      "key": "   ",
+      "format": "Papirus"
+    },
+    {
+      "type": "cursor",
+      "key": "  󰇀 "
+    },
+    {
+      "type": "font",
+      "key": "   ",
+      "format": "Google Sans"
+    },
+    {
+      "type": "terminal",
+      "key": "   ",
+      "format": "{5}"
+    },
+    {
+      "type": "terminalfont",
+      "key": "   "
+    },
+    {
+      "type": "custom",
+      "format": "└────────────────────────────────────────────┘"
+    },
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 16
+    }
+  ]
+}
