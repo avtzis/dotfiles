@@ -77,6 +77,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+#PATH
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # FPATH
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
