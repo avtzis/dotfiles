@@ -1,144 +1,84 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# Powerlevel 10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Startup
+krabby random
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Zinit
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# Plugins
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit light zsh-users/zsh-completions
+# zinit light Aloxaf/fzf-tab
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# Snippets
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::aliases
+zinit snippet OMZP::copybuffer
+zinit snippet OMZP::dirhistory
+zinit snippet OMZP::extract
+zinit snippet OMZP::safe-paste
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+# Autoloads
+autoload -Uz compinit && compinit
+zinit cdreplay -q
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="false"
+# Options
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+HISTDUP=erase
+setopt autocd
+setopt extendedglob
+setopt nomatch
+setopt notify
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-COMPLETION_WAITING_DOTS="true"
+unsetopt beep
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-HIST_STAMPS="dd/mm/yyyy"
+# Styling
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS-COLORS}"
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	git
-	aliases
-	#colored-man-pages
-	copypath
-	copyfile
-	cp
-	dirhistory
-	extract
-	safe-paste
-	web-search
-	autojump
-	docker
-	copybuffer
-	sudo
-	history
+# Aliases
+alias zshconfig="vim ~/.zshrc"
+alias hyprconfig="vim ~/.config/hypr/hyprland.conf"
+alias nixconfig="sudo vim /etc/nixos/configuration.nix"
+alias rebuild="sudo nixos-rebuild switch"
+alias rb="rebuild"
+alias q="exit"
+alias reload="source ~/.zshrc"
+alias rr="reload"
+alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
+alias nv="nvim"
+alias j="z"
 
-	#custom
-	# zsh-syntax-highlighting
-	zsh-autosuggestions
-	fast-syntax-highlighting
-)
+# Shell Integrations
+# eval "$(fzf --zsh)"
+# eval "$(zoxide init zsh)"
 
-source $ZSH/oh-my-zsh.sh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# User configuration
-
-#PATH
-export PATH="$PATH:$HOME/.cargo/bin"
-
-# FPATH
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# Preferred editor for local and remote sessions
-export EDITOR='vim'
-
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
-
-# Custom Variables
-export BACKTICK='`'
-
-# Custom Keybindings
+# Keybinds
+#bindkey -e
 bindkey '^H' backward-kill-word
 
-# Colored Manpages
-# source $ZSH/manpages.sh
+# Prompt
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-alias zshconfig="nvim ~/.zshrc"
-alias hyprconfig="nvim ~/.config/hypr/hyprland.conf"
-alias wbconfig="nvim ~/.config/waybar/config"
-alias wbstyle="nvim ~/.config/waybar/style.css"
-alias nvc="nvim ~/.config/nvim/init.vim"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias pacin="sudo pacman -S"
-alias pacout="sudo pacman -R"
-alias pacoutf="pacout -dd"
-alias paclean="sudo pacman -Sc"
-alias pacorph="sudo pacman -Qtdq | sudo pacman -Rns -"
-alias sui="arch-update -d"
-alias yayin="yay -S"
-alias payin='yayin'
-alias yayout='yay -R'
-alias q='exit'
-alias pokemon='pokemon-colorscripts -r'
-alias ls='lsd'
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='ls --tree'
-alias lst='ls --tree'
-alias clipboard='wl-copy'
-alias vim='nvim'
-alias vi='nvim'
-alias v='nvim'
-alias nv='nvim'
-alias ntua='sudo openvpn ~/.openvpn/ntua.ovpn'
-alias nf='neofetch'
-alias ff='fastfetch'
-alias clear="printf '\033[2J\033[3J\033[1;1H'"
-alias clang-15="/usr/lib/llvm15/bin/clang-15"
-alias llc-15="/usr/lib/llvm15/bin/llc"
-alias gracec="~/projects/ntua-gracec/gracec"
-
-# Startup
-pokemon
